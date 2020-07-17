@@ -15,6 +15,9 @@ const routes: Routes = [
     redirectTo: 'index',
     pathMatch: 'full',
   }, {
+    path: 'home',
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+  }, {
     path: 'index',
     component: ComponentsComponent,
   }, {
