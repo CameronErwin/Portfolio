@@ -1,0 +1,5 @@
+.page-header {
+  &[filter-color="blue"] {
+    background-image: linear-gradient(rgba(44, 44, 44, .20), rgba(7, 120, 250, 0.6));
+  }
+}
