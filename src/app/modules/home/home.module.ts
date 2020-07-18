@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { HomeComponentRoutingModule } from './home-routing.module';
 import { FooterComponent } from 'app/@core/footer/footer/footer.component';
 import { AboutComponent } from './component/about/about.component';
+import { ProjectsComponent } from './component/projects/projects.component';
 
 @NgModule({
   imports: [
@@ -15,9 +16,7 @@ import { AboutComponent } from './component/about/about.component';
     HomeComponent,
     FooterComponent,
     AboutComponent,
-  ],
-  entryComponents: [
-    FooterComponent,
+    ProjectsComponent,
   ],
 })
 export class HomeModule { }
