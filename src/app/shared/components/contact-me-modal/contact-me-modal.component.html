@@ -1,0 +1,50 @@
+<div class="modal-header justify-content-center">
+  <button type="button" class="close" (click)="dismiss()">
+    <i class="now-ui-icons ui-1_simple-remove"></i>
+  </button>
+  <h4 class="title title-up">Contact Me!</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="contactForm">
+    <div class="input-group form-group-no-border input-lg"
+      [ngClass]="{'input-group-focus':emailFocus === true}">
+      <input type="text"
+        class="form-control"
+        placeholder="Email Address"
+        formControlName="email"
+        (focus)="emailFocus = true"
+        (blur)="emailFocus = false" />
+    </div>
+    <div class="input-group form-group-no-border input-lg"
+      [ngClass]="{'input-group-focus':subjectFocus === true}">
+      <input type="text"
+        class="form-control"
+        placeholder="Subject"
+        formControlName="subject"
+        (focus)="subjectFocus = true"
+        (blur)="subjectFocus = false" />
+    </div>
+    <div class="input-group form-group-no-border input-lg"
+      [ngClass]="{'input-group-focus':messageFocus === true}">
+      <textarea class="form-control"
+        placeholder="Message"
+        formControlName="message"
+        (focus)="messageFocus = true"
+        (blur)="messageFocus = false"></textarea>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button"
+    class="btn btn-danger"
+    (click)="dismiss()">
+    Cancel
+  </button>
+  <button type="button"
+    class="btn btn-primary pull-right"
+    (click)="send()"
+    [disabled]="contactForm.invalid">
+    <i class="now-ui-icons ui-1_send"></i>&nbsp;
+    Send
+  </button>
+</div>

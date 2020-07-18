@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "compileOnSave": true,
   "compilerOptions": {
     "importHelpers": true,
     "outDir": "./dist/out-tsc",
@@ -7,16 +7,16 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
+    "module": "esnext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2016",
+      "es2018",
       "dom"
     ],
-    "module": "es2015"
   }
 }
