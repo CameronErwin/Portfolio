@@ -15,6 +15,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactMeModalComponent implements OnInit, OnDestroy {
 
   public contactForm: FormGroup;
+  public emailFocus: boolean = false;
   public subjectFocus: boolean = false;
   public messageFocus: boolean = false;
 
