@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -26,7 +25,6 @@ import { ContactMeModalComponent } from './shared/components/contact-me-modal/co
     RouterModule,
     AppRoutingModule,
     ComponentsModule,
-    ExamplesModule,
     HttpClientModule,
   ],
   providers: [],

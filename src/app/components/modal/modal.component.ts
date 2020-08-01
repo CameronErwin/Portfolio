@@ -7,6 +7,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 // tslint:disable-next-line: component-class-suffix
 export class NgbdModalBasic {
+
   closeResult: string;
 
   constructor(private modalService: NgbModal) {}
@@ -50,4 +51,5 @@ export class NgbdModalBasic {
       return  `with: ${reason}`;
     }
   }
+
 }
