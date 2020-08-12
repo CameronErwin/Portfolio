@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
+import { ToastrModule } from 'ngx-toastr';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ContactMeModalComponent } from './shared/components/contact-me-modal/contact-me-modal.component';
@@ -26,6 +28,7 @@ import { ContactMeModalComponent } from './shared/components/contact-me-modal/co
     AppRoutingModule,
     ComponentsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

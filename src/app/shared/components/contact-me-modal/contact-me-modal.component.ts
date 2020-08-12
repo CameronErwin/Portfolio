@@ -6,6 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { EmailService } from 'app/@core/services/email.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact-me-modal',
@@ -25,6 +26,7 @@ export class ContactMeModalComponent implements OnInit, OnDestroy {
     private emailService: EmailService,
     private modal: NgbActiveModal,
     private formBuilder: FormBuilder,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -64,7 +66,7 @@ export class ContactMeModalComponent implements OnInit, OnDestroy {
     this.emailService.sendContactEmail(this.contactForm.value)
     .pipe(takeUntil(this.unsubscribe$))
     .subscribe(() => {
-      // toast?
+      this.toastr.success('', 'E-mail sent!');
       this.modal.close();
     });
   }
