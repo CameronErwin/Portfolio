@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +17,11 @@ export class EmailService {
     subject: string,
     message: string,
   }): Observable<any> {
-    console.log(data);
-    return of('');
+    return this.http.post('https://cameronerwin.ca/api/sendEmail', {
+      from: data.email,
+      subject: data.subject,
+      body: data.message,
+    });
   }
 
 }

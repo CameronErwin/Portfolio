@@ -3,23 +3,14 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ComponentsComponent } from './components/components.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'index',
+    redirectTo: 'home',
     pathMatch: 'full',
   }, {
     path: 'home',
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
-  }, {
-    path: 'index',
-    component: ComponentsComponent,
-  }, {
-    path: 'nucleoicons',
-    component: NucleoiconsComponent,
   },
 ];
 
