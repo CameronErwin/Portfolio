@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { DOCUMENT, Location } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
+
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
-import { DOCUMENT } from '@angular/common';
-import { Location } from '@angular/common';
+
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
@@ -18,15 +19,15 @@ export class AppComponent implements OnInit {
   private _router: Subscription;
 
   constructor(
+    public location: Location,
     private renderer: Renderer2,
     private router: Router,
     @Inject(DOCUMENT) private document: any,
-    private element : ElementRef,
-    public location: Location,
+    private element: ElementRef,
   ) {}
 
   ngOnInit() {
-    const navbar : HTMLElement = this.element.nativeElement.children[0].children[0];
+    const navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
     this._router = this.router.events
     .filter(event => event instanceof NavigationEnd)
     .subscribe((event: NavigationEnd) => {
@@ -44,7 +45,6 @@ export class AppComponent implements OnInit {
         if (scrollHeight > 150 || window.pageYOffset > 150) {
           navbar.classList.remove('navbar-transparent');
         } else {
-          // remove logic
           navbar.classList.add('navbar-transparent');
         }
       });

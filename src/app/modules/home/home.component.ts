@@ -11,8 +11,6 @@ export class HomeComponent implements OnInit {
 
   public rellaxHeader: Rellax;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.rellaxHeader = new Rellax('.rellax-header');
   }
