@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { EmailService } from 'app/@core/services/email.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -56,6 +56,18 @@ export class ContactMeModalComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  get email(): AbstractControl {
+    return this.contactForm.get('email');
+  }
+
+  get subject(): AbstractControl {
+    return this.contactForm.get('subject');
+  }
+
+  get message(): AbstractControl {
+    return this.contactForm.get('message');
   }
 
   dismiss(): void {
